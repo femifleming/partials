@@ -30,8 +30,8 @@ endif()
 
 juce_add_plugin(Partials
     VERSION 1.0.0
-    COMPANY_NAME "FreakiePie"
-    BUNDLE_ID "com.freakiepie.partials"
+    COMPANY_NAME "Partials"
+    BUNDLE_ID "com.partials.partials"
     PLUGIN_MANUFACTURER_CODE Frkp
     PLUGIN_CODE Prtl
     FORMATS ${PT_FORMATS}
@@ -46,7 +46,7 @@ juce_add_plugin(Partials
     AU_MAIN_TYPE kAudioUnitType_MusicDevice
     VST3_CATEGORIES Instrument Synth
     VST2_CATEGORY kPlugCategSynth
-    LV2URI "urn:freakiepie:partials"
+    LV2URI "urn:partials:partials"
     COPY_PLUGIN_AFTER_BUILD ${PARTIALS_COPY_AFTER_BUILD})
 
 juce_add_binary_data(PartialsFonts SOURCES
@@ -64,5 +64,5 @@ target_sources(PartialsTest PRIVATE tests/Test.cpp Source/PluginProcessor.cpp So
 target_compile_definitions(PartialsTest PRIVATE ${PT_DEFS} JucePlugin_Name="Partials" JucePlugin_Build_Standalone=1
     JucePlugin_IsSynth=1 JucePlugin_WantsMidiInput=1 JucePlugin_ProducesMidiOutput=0 JucePlugin_IsMidiEffect=0
     JucePlugin_ManufacturerCode=0x46726b70 JucePlugin_PluginCode=0x5072746c JucePlugin_VersionString="1.0.0"
-    JucePlugin_Manufacturer="FreakiePie" JucePlugin_Desc="Partials" JucePlugin_VersionCode=0x10000 PARTIALS_TEST=1)
+    JucePlugin_Manufacturer="Partials" JucePlugin_Desc="Partials" JucePlugin_VersionCode=0x10000 PARTIALS_TEST=1)
 target_link_libraries(PartialsTest PRIVATE PartialsFonts juce::juce_audio_utils juce::juce_dsp juce::juce_recommended_config_flags)
